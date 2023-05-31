@@ -8,6 +8,8 @@
     "serverstart": "DEBUG=inventory_application:* npm run devstart"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.342.0",
+    "aws-sdk": "^2.1387.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
