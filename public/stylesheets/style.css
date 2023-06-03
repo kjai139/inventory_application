@@ -6,3 +6,19 @@ body {
 a {
   color: #00B7FF;
 }
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.grid-img {
+  max-width: 100%;
+}

@@ -1,8 +1,16 @@
 extends layout 
 
 block content 
-    div.item-grid
-        ul 
+    h1 THE SHOP
+    div
+        div.items-grid
             each item in items 
-                li #{item.name} 
+                div.items-container 
+                    div 
+                        img(src=`${item.imgUrl}`).grid-img
+                    div 
+                        span 
+                            h4 #{item.name}
+                    div 
+                        span #{item.description}
 
