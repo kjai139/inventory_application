@@ -10,6 +10,9 @@ a {
 .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .items-container {
@@ -17,6 +20,13 @@ a {
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.gridblocks {
+  text-decoration: none;
+  color: inherit;
 }
 
 .grid-img {
