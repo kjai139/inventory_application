@@ -32,3 +32,22 @@ a {
 .grid-img {
   max-width: 100%;
 }
+
+.createItemForm {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+input::-webkit-inner-spin-button {
+  appearance: none;
+  
+}
+

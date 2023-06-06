@@ -8,9 +8,13 @@ block content
                 a(href=item.url).gridblocks 
                     div.items-container 
                         div 
-                            img(src=`${item.imgUrl}`).grid-img
+                            img(src=item.imgUrl ? item.imgUrl : null).grid-img
                         div 
                             span 
                                 h4 #{item.name}
                         div 
                             span #{item.description}
+    h2 ADD AN ITEM 
+    div 
+        a(href='shop/item/create')
+            button Add

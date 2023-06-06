@@ -14,3 +14,23 @@ exports.index = asyncHandler(async (req, res, next) => {
         items: allItems
     })
 })
+
+exports.create_item_get = asyncHandler(async (req, res, next) => {
+    const allCategory = await Category.find()
+
+    res.render('item_form', {
+        title: 'Create Item',
+        categories: allCategory
+        
+    })
+})
+
+exports.itemDetails = asyncHandler(async (req, res, next) => {
+    const item = await Item.findById(req.params.id)
+
+    res.render('item_details', {
+        item: item
+    } )
+})
+
+
