@@ -3,13 +3,16 @@ extends layout
 block content 
     h1= title 
 
-    form(method='POST' action='').createItemForm
+    form(method='POST' action='' enctype='multipart/form-data').createItemForm
         div.form-group 
             label(for='itemName') Item Name: 
             input(type='text', placeholder='Item Name' name='itemName' required='true' value=(item ? item.name : null))#itemName
         .form-group 
             label(for='itemDescription') Item Description:
             input(type='text', placeholder='Item description' name='itemDescription' required='true' value=(item ? item.description : null))#itemDescription
+        .form-group 
+            label(for='itemImageUrl') Upload Image: 
+            input(type='file', id='itemImageUrl', name='itemImageUrl' accept='image/*' )
         div.form-group 
             label(for='itemPrice') Item Price: 
             input(type='number' required='true' name='itemPrice' value=(item ? item.price : null))#itemPrice

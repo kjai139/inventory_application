@@ -7,7 +7,7 @@ block content
             each item in items
                 a(href=item.url).gridblocks 
                     div.items-container 
-                        div 
+                        div(style='flex: 1') 
                             img(src=item.imgUrl ? item.imgUrl : null).grid-img
                         div 
                             span 

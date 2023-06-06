@@ -10,7 +10,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const shopRouter = require('./routes/shop')
 
+
 var app = express();
+
+
 
 
 const mongoose = require('mongoose')

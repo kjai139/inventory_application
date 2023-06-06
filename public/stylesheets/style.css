@@ -22,11 +22,13 @@ a {
   border: 1px solid black;
   padding: 1rem;
   text-decoration: none;
+  flex: 1;
 }
 
 .gridblocks {
   text-decoration: none;
   color: inherit;
+  display: flex;
 }
 
 .grid-img {
@@ -49,5 +51,10 @@ a {
 input::-webkit-inner-spin-button {
   appearance: none;
   
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
 }
 
