@@ -7,13 +7,16 @@ block content
             each item in items
                 a(href=item.url).gridblocks 
                     div.items-container 
-                        div(style='flex: 1') 
+                        div(style='flex: 2; max-height:225px') 
                             img(src=item.imgUrl ? item.imgUrl : null).grid-img
-                        div 
-                            span 
-                                h4 #{item.name}
-                        div 
-                            span #{item.description}
+                        div(style='flex:1') 
+                            div.priceTag $
+                                span(style='font-size:1.5rem; margin-left: 2px;') #{item.price}
+                            div 
+                                span 
+                                    h4 #{item.name}
+                            div 
+                                span #{item.description}
     h2 ADD AN ITEM 
     div 
         a(href='shop/item/create')

@@ -15,7 +15,7 @@ block content
             input(type='file', id='itemImageUrl', name='itemImageUrl' accept='image/*' )
         div.form-group 
             label(for='itemPrice') Item Price: 
-            input(type='number' required='true' name='itemPrice' value=(item ? item.price : null))#itemPrice
+            input(type='number' required='true' step='any' name='itemPrice' value=(item ? item.price : null))#itemPrice
         div.form-group 
             label(for='itemStock') Number in stock: 
             input(type='number' name='itemStock' required='true' value=(item ? item.number_in_stock : null))#itemStock
@@ -24,7 +24,7 @@ block content
             div  
                 for category in categories 
                     div.categoryInput 
-                        input.checkbox-input(type='checkbox', id=category._id, value=category._id, checked=category.checked)
+                        input.checkbox-input(type='checkbox', id=category._id, value=category._id, name='category', checked=category.checked)
                         label(for=category._id) #{category.name}
         button.submit-btn(type='submit') Submit
     if errors 
