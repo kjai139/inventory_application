@@ -2,3 +2,8 @@ extends layout
 
 block content 
     h1=title
+    form(method='POST' action='').createItemForm
+        div.form-group 
+            label(for='categoryName') Category Name: 
+            input(type='text', placeholder='Category Name' name='categoryName' required='true' value=(category ? category.name : null))#categoryName
+        button.submit-btn(type='submit') Create
