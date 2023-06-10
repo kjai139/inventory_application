@@ -1,0 +1,24 @@
+extends layout 
+
+block content 
+    div 
+        a(href='/shop', style='text-decoration: none;')
+            h2 Back to Shop
+    h1 Are you sure you want to delete this item?
+
+    .itemContainer
+        h1= item.name
+        if item.imgUrl
+            div(style='max-width: 300px')
+                img(src=item.imgUrl style="max-width: 100%")
+
+
+        span #[strong Description] : #{item.description}
+        span #[strong Qty in stock]: #{item.number_in_stock}
+        span #[strong Price]: $ #{item.price}
+        span #[strong Category]: 
+            for category, index in item.category 
+                | #{category.name} #{index !== item.category.length - 1 ? ',' : ''}
+        form(method='POST', action='')
+            button.btn.btn-primary(type='submit') Delete
+

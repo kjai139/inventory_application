@@ -18,6 +18,9 @@ router.get('/item/:id/update', itemController.item_edit_get)
 router.post('/item/:id/update', upload.single('itemImageUrl'), itemController.item_edit_post)
 
 router.get('/category/create', categoryController.create_category)
+router.post('/category/create', categoryController.create_category_post)
 
+router.get('/item/:id/delete', itemController.item_delete_get)
+router.post('/item/:id/delete', itemController.item_delete_post)
 
 module.exports = router

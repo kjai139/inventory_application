@@ -6,4 +6,7 @@ block content
         div.form-group 
             label(for='categoryName') Category Name: 
             input(type='text', placeholder='Category Name' name='categoryName' required='true' value=(category ? category.name : null))#categoryName
+        div.form-group 
+            label(for='categoryDesc') Category Name: 
+            textarea(rows='4' cols='50' placeholder='Description' name='categoryDesc' required='true' value=(category ? category.description : null))#categoryDesc
         button.submit-btn(type='submit') Create

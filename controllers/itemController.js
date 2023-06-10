@@ -7,7 +7,7 @@ require('dotenv').config()
 const crypto = require('crypto')
 const fs = require('fs')
 
-const {PutObjectCommand, S3Client} = require('@aws-sdk/client-s3')
+const {PutObjectCommand, S3Client, DeleteObjectCommand} = require('@aws-sdk/client-s3')
 
 
 
@@ -186,7 +186,7 @@ exports.item_edit_post = [
             if (item.imgUrl) {
                 debug('imgUrl found', item.imgUrl)
                 urlObject = new URL(item.imgUrl)
-                objectPath = urlObject.pathname
+                objectPath = urlObject.pathname.substring(1)
             } else {
                 debug('item had no imgUrl')
                 objectPath = `images/${generateRandomStr(5)}_${generateTimeStamp()}`
@@ -237,3 +237,47 @@ exports.item_edit_post = [
         }
     })
 ]
+
+
+exports.item_delete_get = asyncHandler( async(req, res, next) => {
+    const item = await Item.findById(req.params.id).populate('category')
+    
+    
+    res.render('item_delete_form', {
+        item: item
+    })
+})
+
+exports.item_delete_post = asyncHandler(async (req, res, next) => {
+    const item = await Item.findById(req.params.id)
+
+    
+    let urlObject
+    let objectPath
+    const bucketName = 'invenappbucket'
+            
+    if (item.imgUrl) {
+        debug('imgUrl found', item.imgUrl)
+        
+        urlObject = new URL(item.imgUrl)
+        objectPath = urlObject.pathname
+
+        const params = {
+            Bucket: bucketName,
+            Key: objectPath,
+        }
+
+        const command = new DeleteObjectCommand(params)
+        const response = await s3Client.send(command)
+        debug(response, 's3 response')
+        await Item.findByIdAndRemove(req.params.id)
+        
+        res.redirect('/shop')
+    } else {
+        debug('item had no imgUrl. Only deleting from mongodb')
+        await Item.findByIdAndRemove(req.params.id)
+        res.redirect('/shop')
+    }
+    
+
+})
