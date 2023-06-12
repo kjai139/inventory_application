@@ -9,9 +9,12 @@ block content
                     div.items-container 
                         div(style='flex: 2; max-height:225px') 
                             img(src=item.imgUrl ? item.imgUrl : null).grid-img
-                        div(style='flex:1') 
+                        div.itemInfoDiv 
                             div.priceTag $
                                 span(style='font-size:1.5rem; margin-left: 2px;') #{item.price}
+                            div(style='display:flex;') 
+                                each category in item.category 
+                                    span(style='border: 2px solid black; border-radius: 8px; padding: 3px;') #{category.name}
                             div 
                                 span 
                                     h4 #{item.name}
@@ -24,3 +27,6 @@ block content
     div 
         a(href='shop/category/create')
             button Add a category
+    div 
+        a(href='shop/category/delete')
+            button Remove a category

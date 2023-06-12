@@ -31,3 +31,12 @@ exports.create_category_post = [
         res.redirect('/shop')
     })
 ]
+
+exports.delete_category = asyncHandler(async(req, res, next) => {
+    const allCategories = await Category.find()
+    
+    
+    res.render('category_delete_form', {
+        categories: allCategories
+    })
+})

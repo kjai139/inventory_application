@@ -30,7 +30,7 @@ const generateTimeStamp = () => {
 }
 
 exports.index = asyncHandler(async (req, res, next) => {
-    const allItems = await Item.find().exec()
+    const allItems = await Item.find().populate('category')
 
     debug('allItems', allItems)
     res.render('shop', {

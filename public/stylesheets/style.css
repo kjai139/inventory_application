@@ -60,3 +60,9 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
 }
 
+.itemInfoDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
