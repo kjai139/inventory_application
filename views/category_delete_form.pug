@@ -1,0 +1,11 @@
+extends layout 
+block content 
+    h1= title 
+    form(method='POST' action="" style=('display:flex; gap:10px;')) 
+        button(type='submit') Yes
+        a(href='/shop/categories')
+            button(onclick="event.preventDefault(); window.location.href='/shop/categories'") No
+
+
+
+    

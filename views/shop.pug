@@ -14,7 +14,7 @@ block content
                                 span(style='font-size:1.5rem; margin-left: 2px;') #{item.price}
                             div(style='display:flex;') 
                                 each category in item.category 
-                                    span(style='border: 2px solid black; border-radius: 8px; padding: 3px;') #{category.name}
+                                    span(style='border: 2px solid black; padding: 3px; font-weight: bold;') #{category.name}
                             div 
                                 span 
                                     h4 #{item.name}
@@ -28,5 +28,5 @@ block content
         a(href='shop/category/create')
             button Add a category
     div 
-        a(href='shop/category/delete')
-            button Remove a category
+        a(href='shop/categories')
+            button View categories

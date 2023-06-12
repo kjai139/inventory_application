@@ -66,3 +66,29 @@ input::-webkit-inner-spin-button {
   gap: 10px;
   flex: 1;
 }
+
+.categoryDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoryName {
+  font-weight: bold;
+  
+}
+
+.categoryBtns {
+  border: 0;
+  padding: 5px;
+  
+}
+
+.btnAnchor {
+  display: flex;
+  flex: 1;
+  text-decoration: none;
+}
+
+.categoryBtns:hover {
+  cursor: pointer;
+}

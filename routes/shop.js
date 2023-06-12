@@ -23,4 +23,12 @@ router.post('/category/create', categoryController.create_category_post)
 router.get('/item/:id/delete', itemController.item_delete_get)
 router.post('/item/:id/delete', itemController.item_delete_post)
 
+router.get('/categories', categoryController.category_detail)
+
+router.get('/category/:id/edit', categoryController.category_edit_get)
+router.post('/category/:id/edit', categoryController.category_edit_post)
+
+router.get('/category/:id/delete', categoryController.category_delete_get)
+router.post('/category/:id/delete', categoryController.category_delete_post)
+
 module.exports = router

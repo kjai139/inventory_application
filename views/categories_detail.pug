@@ -1,0 +1,17 @@
+extends layout 
+block content
+    a(href='/shop') Back to Shop
+    h1 Categories Page
+    div(style='display:flex; flex-direction:column; max-width:480px; gap:10px;')
+        for category in categories 
+        
+            div.categoryDiv
+                span(style='display:flex; flex-direction:column; gap:10px;') 
+                    span.categoryName #{category.name}
+                    span.categoryDesc #{category.description}
+                div(style='display:flex; flex-direction:column; gap:10px;')
+                    a.btnAnchor(href=`${category.url}/edit`)
+                        button.categoryBtns(style='width:100%') Edit Category 
+                    a.btnAnchor(href=`${category.url}/delete`)
+                        button.categoryBtns Delete Category
+        
